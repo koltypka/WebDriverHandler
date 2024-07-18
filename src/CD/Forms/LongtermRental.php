@@ -2,6 +2,8 @@
 
 namespace WebDriverHandler\CD\Forms;
 
+use Facebook\WebDriver\Exception\NoSuchElementException;
+use Facebook\WebDriver\Exception\TimeoutException;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\WebDriverExpectedCondition;
 use WebDriverHandler\WebDriver\Capabilities;
@@ -28,7 +30,11 @@ class LongtermRental
         ($this->handler->getDriver())->manage()->window()->maximize();
     }
 
-    public function getNewPage(string $url)
+    /**
+     * @param string $url
+     * @return void
+     */
+    public function getNewPage(string $url): void
     {
         $this->handler->getPage($url);
     }
@@ -63,7 +69,11 @@ class LongtermRental
         return true;
     }
 
-    public function checkDetailForm(string $selector)
+    /**
+     * @param string $selector
+     * @return bool
+     */
+    public function checkDetailForm(string $selector): bool
     {
         try {
             $this->handler->scrollToElement(
@@ -84,7 +94,13 @@ class LongtermRental
         return true;
     }
 
-    private function formBase($baseSelector)
+    /**
+     * @param $baseSelector
+     * @return void
+     * @throws NoSuchElementException
+     * @throws TimeoutException
+     */
+    private function formBase($baseSelector): void
     {
         $this->handler->scrollToElement($baseSelector->findElement(
             WebDriverBy::cssSelector('input[name="FIELDS[NAME]"]')
