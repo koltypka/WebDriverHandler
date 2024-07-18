@@ -1,5 +1,6 @@
 {
-    "name": "koltypka/WebDriverHandler",
+  "name": "koltypka/webdriver-handler",
+  "description": "",
     "autoload": {
         "psr-4": {
             "WebDriverHandler\\": "src/"
