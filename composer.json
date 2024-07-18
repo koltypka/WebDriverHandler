@@ -1,0 +1,17 @@
+{
+    "name": "koltypka/WebDriverHandler",
+    "autoload": {
+        "psr-4": {
+            "WebDriverHandler\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "koltypka",
+            "email": "sevakoltypin@gmail.com"
+        }
+    ],
+    "require": {
+        "php-webdriver/webdriver": "^1.15"
+    }
+}
